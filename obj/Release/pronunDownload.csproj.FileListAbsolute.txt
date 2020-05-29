@@ -1,0 +1,9 @@
+C:\Users\naobaby\source\repos\pronunDownload\bin\Release\pronunDownload.exe.config
+C:\Users\naobaby\source\repos\pronunDownload\bin\Release\pronunDownload.exe
+C:\Users\naobaby\source\repos\pronunDownload\bin\Release\pronunDownload.pdb
+C:\Users\naobaby\source\repos\pronunDownload\obj\Release\pronunDownload.csprojAssemblyReference.cache
+C:\Users\naobaby\source\repos\pronunDownload\obj\Release\pronunDownload.Form1.resources
+C:\Users\naobaby\source\repos\pronunDownload\obj\Release\pronunDownload.Properties.Resources.resources
+C:\Users\naobaby\source\repos\pronunDownload\obj\Release\pronunDownload.csproj.GenerateResource.cache
+C:\Users\naobaby\source\repos\pronunDownload\obj\Release\pronunDownload.exe
+C:\Users\naobaby\source\repos\pronunDownload\obj\Release\pronunDownload.pdb

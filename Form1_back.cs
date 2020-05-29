@@ -47,7 +47,7 @@ namespace pronunDownload
 
         public async void fntreat()
         {
-            label1.Text = "Processing test";
+            label1.Text = "Processing";
             var rfn = textBox1.Text;
             List<List<string>> LoadFileData = new List<List<string>>();
             string line;

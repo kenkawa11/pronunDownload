@@ -10,11 +10,15 @@ using System.Windows.Forms;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Net.Http;
 
 namespace pronunDownload
 {
+
+    
     public partial class Form1 : Form
     {
+        static HttpClient client = new HttpClient();
         Boolean isCancel;
         public Form1()
         {
@@ -43,6 +47,8 @@ namespace pronunDownload
             fntreat();
             button2.Enabled = true;
         }
+
+
 
 
         public async void fntreat()
@@ -150,34 +156,35 @@ namespace pronunDownload
             label1.Text = "Complete";
         }
 
-        public string get_body(string url)
+        public async Task<string> get_body(string url)
         {
-            var req = (HttpWebRequest)WebRequest.Create(url);
-            req.UserAgent = "Mozilla/5.0";
-            string html = "";
             try
             {
-                using (var res = (HttpWebResponse)req.GetResponse())
-                using (var resSt = res.GetResponseStream())
-                // 取得した文字列をUTF8でエンコードします。
-                using (var sr = new StreamReader(resSt, Encoding.UTF8))
-                {
-                    // HTMLを取得する。
-                    html = sr.ReadToEnd();
-                }
+                var request = new HttpRequestMessage(HttpMethod.Get, url);
+                request.Headers.Add("UserAgent", "Mozilla/5.0");
+                //var html = await client.GetStringAsync(url)
+                var resp = await client.SendAsync(request).ConfigureAwait(false);
+                string html = await resp.Content.ReadAsStringAsync().ConfigureAwait(false);
                 return html;
             }
-            catch (System.Net.WebException)
+            catch (HttpRequestException e)
             {
                 return "0";
             }
         }
 
-        public void get_mp3(string url_mp3, string fn)
+        public async void get_mp3(string url_mp3, string fn)
         {
-            WebClient webClient = new WebClient();
-            var basepath = @"C:\Users\naobaby\Desktop\test\";
-            webClient.DownloadFile(url_mp3, basepath + fn + ".mp3");
+            HttpResponseMessage res = await client.GetAsync(url_mp3);
+            var outputPath = @"C:\Users\naobaby\Desktop\test\" + fn + ".mp3";
+            using (var fileStream = File.Create(outputPath))
+            {
+                using (var httpStream = await res.Content.ReadAsStreamAsync())
+                {
+                    httpStream.CopyTo(fileStream);
+                    fileStream.Flush();
+                }
+            }
         }
         
         public string Downloadmp3(string url_dic,string w,string fn)
@@ -208,7 +215,7 @@ namespace pronunDownload
 
             var url = url_dic + w;
 
-            var html = get_body(url);
+            var html = get_body(url).Result;
 
             if (html=="0")
             {

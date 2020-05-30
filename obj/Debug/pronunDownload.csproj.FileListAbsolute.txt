@@ -17,3 +17,13 @@ C:\Users\naobaby\source\repos\kenkawa11\pronunDownload\obj\Debug\pronunDownload.
 C:\Users\naobaby\source\repos\kenkawa11\pronunDownload\obj\Debug\pronunDownload.csproj.CoreCompileInputs.cache
 C:\Users\naobaby\source\repos\kenkawa11\pronunDownload\obj\Debug\pronunDownload.exe
 C:\Users\naobaby\source\repos\kenkawa11\pronunDownload\obj\Debug\pronunDownload.pdb
+C:\prondl\pronunDownload\bin\Debug\pronunDownload.exe.config
+C:\prondl\pronunDownload\bin\Debug\pronunDownload.exe
+C:\prondl\pronunDownload\bin\Debug\pronunDownload.pdb
+C:\prondl\pronunDownload\obj\Debug\pronunDownload.csprojAssemblyReference.cache
+C:\prondl\pronunDownload\obj\Debug\pronunDownload.Form1.resources
+C:\prondl\pronunDownload\obj\Debug\pronunDownload.Properties.Resources.resources
+C:\prondl\pronunDownload\obj\Debug\pronunDownload.csproj.GenerateResource.cache
+C:\prondl\pronunDownload\obj\Debug\pronunDownload.csproj.CoreCompileInputs.cache
+C:\prondl\pronunDownload\obj\Debug\pronunDownload.exe
+C:\prondl\pronunDownload\obj\Debug\pronunDownload.pdb

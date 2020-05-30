@@ -160,11 +160,8 @@ namespace pronunDownload
         {
             try
             {
-                var request = new HttpRequestMessage(HttpMethod.Get, url);
-                request.Headers.Add("UserAgent", "Mozilla/5.0");
-                //var html = await client.GetStringAsync(url)
-                var resp = await client.SendAsync(request).ConfigureAwait(false);
-                string html = await resp.Content.ReadAsStringAsync().ConfigureAwait(false);
+                client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0");
+                var html = await client.GetStringAsync(url).ConfigureAwait(false);
                 return html;
             }
             catch (HttpRequestException e)
